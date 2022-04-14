@@ -10,8 +10,9 @@ module.exports = {
     filename: "bundle.js",
   },
   optimization: {
+    usedExports: true,
     minimize: true,
-    minimizer: [new TerserPlugin(parallel: true)],
+    minimizer: [new TerserPlugin()],
   },
   devtool: "source-map",
   module: {
