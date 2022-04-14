@@ -41,7 +41,7 @@ var App = (props) => {
   //pass the second argument so it doesnt create an infinite loop everytime this component renders
   useEffect(() => {
     setProd(productData);
-
+ 
   }, []);
 
   useEffect(() => {

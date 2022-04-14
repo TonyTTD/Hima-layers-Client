@@ -12,31 +12,6 @@ code {
     monospace;
 }
 
-#imageContainer {
-  position: relative;
-  justify-content: center;
-  float: right;
-  overflow: hidden;
-}
-
-.styleThumb {
-  border-radius: 50%;
-  border-style: solid;
-  border-width: 3px;
-}
-
-.styleName {
-  position: relative;
-}
-
-.styleDisplay {
-  height: 250px;
-  width: 300px;
-  justify-content: center;
-}
-/* .ProductInformation {
-  float: right;
-} */
 
 .cardContainer {
   position: relative;
