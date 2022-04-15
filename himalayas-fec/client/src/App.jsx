@@ -41,7 +41,7 @@ var App = (props) => {
   //pass the second argument so it doesnt create an infinite loop everytime this component renders
   useEffect(() => {
     setProd(productData);
- 
+
   }, []);
 
   useEffect(() => {
@@ -82,9 +82,10 @@ var App = (props) => {
                 <div id="product-card" className={category}>
                   <img
                     className="product-img"
-                    max-width="300px"
-                    max-height="325px"
-                    src="./img/R.jpg"
+                    width="300px"
+                    height="300px"
+                    // src="./img/R.webp"
+                    alt="your imagination"
                   ></img>
                   {productDisplay().categoryItems[i].map((item, j) => {
                     return (
@@ -130,7 +131,9 @@ var App = (props) => {
         >
           <img
             className="logo-img"
-            src="./img/hima-layers-logo.png"
+            src="./img/hima-layers-logo.webp"
+            width="250px"
+            height="40px"
             alt="Hima-Layers"
           ></img>
         </div>
