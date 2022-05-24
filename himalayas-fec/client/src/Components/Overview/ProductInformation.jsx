@@ -16,6 +16,10 @@ const ProductInformation = (props) => {
   const [priceValue, setPrice] = useRecoilState(priceVal);
 
   let prod = props.currentProduct;
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
 
   // if (!props.styles) {
 
@@ -27,6 +31,10 @@ const ProductInformation = (props) => {
 
   // } else {
     let styles = props.styles;
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
     let defaultStyle = styles.results[0];
 
 
@@ -41,7 +49,7 @@ const ProductInformation = (props) => {
     findDefault();
 
     const [currentStyle, selectStyle] = useState(defaultStyle);
-    // console.log('currentStyle', currentStyle);
+
     var price;
 
     const prodSelect = () => {
@@ -56,6 +64,10 @@ const ProductInformation = (props) => {
   //
 
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
 
   return (
 

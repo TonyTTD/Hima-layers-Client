@@ -34,7 +34,6 @@ const Overview = (props) => {
   });
 
   let stylesArray = useRecoilValue(currentStylesSelector);
-  // console.log('stylesArray', stylesArray);
   if (stylesArray.results.length === 0) {
     stylesArray = null;
   }
@@ -44,7 +43,12 @@ const Overview = (props) => {
       <StyleSelector styles={stylesArray} />
       <ProductInformation
         currentProduct={currentProduct}
+<<<<<<< HEAD
+        styles={stylesArray}
+      />
+=======
         styles={stylesArray}/>
+>>>>>>> master
     </div>
   );
 };

@@ -21,6 +21,13 @@ var Reviews = () => {
 
   //----------------------for ratings-----------------
   const specifiedRatings = useRecoilValue(productMetaReviewsSelector);
+
+  // const recommended = Number(specifiedRatings.recommended.true || 0);
+
+  // const notRecommended = Number(specifiedRatings.recommended.false || 0);
+  // const sum = recommended + notRecommended;
+
+  // total rating part
   // ---------------------for filter rating------------------
   const rating = useRecoilValue(ratingSelector);
   const filter = useRecoilValue(filterReview);
@@ -45,6 +52,8 @@ var Reviews = () => {
     })
     .reduce((a, b) => a + b, 0);
 
+  // -------------for single review--------------
+  const specifiedReviewID = useRecoilValue(productReviewsSelector);
   const [initSortParam, setInitSortParam] = useRecoilState(sortParam);
   const handleDropdown = (e) => {
     setInitSortParam(e.target.value);

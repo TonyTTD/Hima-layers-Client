@@ -200,8 +200,6 @@
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  // z-index: 10;
-  // float: right;
 }
 
 .space {
@@ -211,25 +209,12 @@
 .display {
   display: flex;
   flex-direction: row;
-  // max-width: 820px;
-  // max-height: 600px;
   max-width: 99%;
   height: 600px;
-  // position: absolute;
-  // bottom: 500px;
-  // right: 500px;
-  // object-fit:scale-down;
 }
 
 .main-gal {
-//   display: flex;
-//   position: absolute;
-//   bottom: 0px;
-//   right: 700px;
-//   // width: 600px;
   max-width: 99%;
-//   height: 500px;
-//   object-fit: fill;
 }
 
 #category {

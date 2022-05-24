@@ -6,7 +6,7 @@ const ModeSelector = () => {
   const [themeMode, setThemeMode] = useRecoilState(theme);
   return (
     <div className="switch-container">
-      <label>
+      <label forHTML={`${themeMode ? "light" : "dark"} switch`}>
         <input
           type="checkbox"
           name={"swicher"}

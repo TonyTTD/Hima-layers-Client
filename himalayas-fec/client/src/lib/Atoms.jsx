@@ -123,7 +123,6 @@ export const categoryProductsMain = selector({
 
 export const productResponse = () => {
   const data = useRecoilValue(productSelector);
-  // console.log("💔", data);
   return data.data;
 };
 // ================================================
@@ -229,7 +228,7 @@ export const productReviewsSelector = selector({
       const response = await apiCalls.listReviews(productID, page, count, sort);
       return response.data.results;
     } catch (err) {
-      console.log("err from Atom all review 🤬", err);
+      throw err;
     }
   },
 });
@@ -263,12 +262,12 @@ export const productMetaReviewsSelector = selector({
   get: async ({ get }) => {
     try {
       const productID = await get(selectedProductId);
-      // console.log("🙀in atom current product id:", productID);
+
       const response = await apiCalls.metaReviews(productID);
-      // console.log("🤲 in atom current meta review:", response);
+
       return response.data;
     } catch (err) {
-      console.log("err from Atom meta review 🤬", err);
+      throw err;
     }
   },
 });
@@ -470,8 +469,6 @@ export const clickListenerSelector = selector({
   key: "clickListenerSelector",
   get: ({ get }) => {
     return document.addEventListener("click", (event) => {
-      console.log("element", event.target.nodeName);
-      console.log("time", new Date(event.timeStamp));
 
       let element = event.target.nodeName;
       let widget = null;
@@ -480,7 +477,6 @@ export const clickListenerSelector = selector({
       event.path.forEach((module) => {
         if (module.id !== undefined && module.id.indexOf("-module") !== -1) {
           widget = module.id.split("-module")[0];
-          console.log("widget", widget);
         }
       });
 

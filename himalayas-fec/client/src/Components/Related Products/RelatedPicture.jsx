@@ -21,5 +21,4 @@ const RelatedPicture = (props) => {
 
 export default RelatedPicture;
 
-// onMouseEnter={() => {console.log('mouse over!')}} onMouseLeave={() => {console.log()}}
 

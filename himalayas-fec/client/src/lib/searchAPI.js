@@ -20,7 +20,7 @@ var axiosGet = (url) => {
       return data;
     })
     .catch((err) => {
-      console.log("Error from API", err);
+      throw err;
     });
 };
 
@@ -35,11 +35,10 @@ var axiosPost = (url, data) => {
 
   return axios(options)
     .then((data) => {
-      console.log("Data posted", data);
       return data;
     })
     .catch((err) => {
-      console.log("Error from API", err);
+      throw err;
     });
 };
 
@@ -52,11 +51,10 @@ var axiosPut = (url) => {
 
   return axios(options)
     .then((data) => {
-      console.log("Data updated", data);
       return data;
     })
     .catch((err) => {
-      console.log("Error from API", err);
+      throw err;
     });
 };
 

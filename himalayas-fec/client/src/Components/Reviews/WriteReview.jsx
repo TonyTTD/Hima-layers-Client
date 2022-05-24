@@ -12,13 +12,6 @@ function WriteReview({ hideModal, characteristics, product_id }) {
   const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
   const [recommend, setRecommend] = useState(null);
-  // const [size, setSize] = useState(null);
-  // const [width, setWidth] = useState(null);
-  // const [comfort, setComfort] = useState(null);
-  // const [quality, setQuality] = useState(null);
-  // const [length, setLength] = useState(null);
-  // const [fit, setFit] = useState(null);
-
   const [factors, setFactors] = useState(null);
   const [reviewSum, setReviewSum] = useState(null);
   const [review, setReview] = useState(null);
@@ -47,6 +40,8 @@ function WriteReview({ hideModal, characteristics, product_id }) {
   };
 
   const handleSelectionId = (e) => {
+
+    // setRecommend(e.target.id);
     if (e.target.id === "Yes") {
       setRecommend(true);
     } else {
@@ -55,34 +50,32 @@ function WriteReview({ hideModal, characteristics, product_id }) {
   };
 
   const handleSelectionValue = (e) => {
+
+    if (e.target.id.includes("size")) {
+      specificCharacteristics["Size"] = e.target.value;
+      setSize(e.target.value);
     if (e.target.id.includes("fit")) {
       initCharVal.push([19, Number(e.target.value)]);
-      console.log("", initCharVal, typeof e.target.value);
     }
     if (e.target.id.includes("length")) {
       initCharVal.push([18, Number(e.target.value)]);
-      console.log("", initCharVal);
     }
     if (e.target.id.includes("comfort")) {
       initCharVal.push([16, Number(e.target.value)]);
-      console.log("", initCharVal);
     }
     if (e.target.id.includes("quality")) {
       initCharVal.push([17, Number(e.target.value)]);
-      console.log(17, initCharVal);
     }
     if (e.target.id.includes("size")) {
       initCharVal.push([14, Number(e.target.value)]);
-      console.log("", initCharVal);
     }
     if (e.target.id.includes("width")) {
       initCharVal.push([15, Number(e.target.value)]);
-      console.log("", initCharVal);
     }
   };
 
   const handleInput = (e) => {
-    console.log(e.target.value);
+
     if (e.target.id === "reviewSum") {
       setReviewSum(e.target.value);
     }
@@ -112,7 +105,6 @@ function WriteReview({ hideModal, characteristics, product_id }) {
       characteristics: Object.fromEntries(initCharVal),
     };
 
-    console.log(reviewBody);
     postReview(reviewBody);
   };
 
@@ -178,7 +170,7 @@ function WriteReview({ hideModal, characteristics, product_id }) {
                     </div>
                   );
                 } else if (characteristic === "Width") {
-                  // console.log(characteristic);
+
                   return (
                     <div key={characteristic} onChange={handleSelectionValue}>
                       <b>Width: </b>
@@ -211,7 +203,7 @@ function WriteReview({ hideModal, characteristics, product_id }) {
                     </div>
                   );
                 } else if (characteristic === "Quality") {
-                  // console.log(characteristic);
+
                   return (
                     <div key={characteristic} onChange={handleSelectionValue}>
                       <b>Quality: </b>
@@ -228,7 +220,7 @@ function WriteReview({ hideModal, characteristics, product_id }) {
                     </div>
                   );
                 } else if (characteristic === "Length") {
-                  // console.log(characteristic);
+
                   return (
                     <div key={characteristic} onChange={handleSelectionValue}>
                       <b>Length: </b>
@@ -245,7 +237,7 @@ function WriteReview({ hideModal, characteristics, product_id }) {
                     </div>
                   );
                 } else if (characteristic === "Fit") {
-                  // console.log(characteristic);
+
                   return (
                     <div key={characteristic} onChange={handleSelectionValue}>
                       <b>Fit: </b>

@@ -15,7 +15,7 @@ const deleteCard = async (index) => {
 
   newValue = [...outfitArrayValue];
   newValue.splice(index, 1);
-  console.log(newValue, 'this is spliced')
+
   if (index > -1) {
     setOutfitArray(newValue)
   }
@@ -29,7 +29,7 @@ const deleteCard = async (index) => {
             <RelatedOutfitCard/>
           </div>
             {outfitArrayValue.map((value, index) => {
-              console.log(index, 'stars index')
+       
               return (
                 <div key={index} className='outfitPicture' style={{backgroundSize: 'cover', backgroundImage: `url(${value.url})`}}>
                   <RiCloseCircleFill className='outfitCloseCircle' onClick={() => {

@@ -66,13 +66,9 @@ const StyleSelector = (props) => {
 
     return (
 
-      // <div className="styles">
-      // {/* <h3>Styles</h3> */}
-      //   {/* <div id="imageContainer"><span><strong>STYLE</strong> > SELECTED STYLE</span> */}
       <>
         <StyleGallery  style={currentStyle}/>
         <div className="images">
-          {/* <div><strong>STYLE</strong> > SELECTED STYLE</div> */}
         </div>
         <div className="thumbs">
         <span className="style-list"><strong>STYLE</strong> > SELECTED STYLE</span>
@@ -89,9 +85,6 @@ const StyleSelector = (props) => {
           </div>
           </div>
       </>
-      //   {/* </div> */}
-      // {/* <StyleGallery  style={currentStyle}/> */}
-    // </div>
   )
 
   } else {
