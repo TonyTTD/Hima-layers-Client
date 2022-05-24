@@ -235,7 +235,6 @@ GET /products/:product_id/related
   
 + Response 200 (application/json)
 ```json
-   
 [
   2,
   3,
@@ -244,3 +243,82 @@ GET /products/:product_id/related
 ],
 ```
     
+### List Reviews
+```httpg
+GET /reviews/
+```
+
+<table>
+  <tbody>
+    <tr>
+      <td>Parameter</td>
+      <td>Type</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>page</td>
+      <td>int</td>
+      <td>Selects the page of results to return. Default 1</td>
+    </tr>
+    <tr>
+      <td>count</td>
+      <td>int</td>
+      <td>Specifies how many results per page to return. Default 5</td>
+    </tr>
+    <tr>
+      <td>sort</td>
+      <td>text</td>
+      <td>Changes the sort order of reviews to be based on "newest", "helpful", or "relevant"</td>
+    </tr>
+    <tr>
+      <td>product_id</td>
+      <td>int</td>
+      <td>Specifies the product for which to retrieve reviews.</td>
+    </tr>
+  </tbody>
+</table>
+  
++ Response 200 (application/json)
+```json
+{
+  "product": "2",
+  "page": 0,
+  "count": 5,
+  "results": [
+    {
+      "review_id": 5,
+      "rating": 3,
+      "summary": "I'm enjoying wearing these shades",
+      "recommend": false,
+      "response": null,
+      "body": "Comfortable and practical.",
+      "date": "2019-04-14T00:00:00.000Z",
+      "reviewer_name": "shortandsweeet",
+      "helpfulness": 5,
+      "photos": [{
+          "id": 1,
+          "url": "urlplaceholder/review_5_photo_number_1.jpg"
+        },
+        {
+          "id": 2,
+          "url": "urlplaceholder/review_5_photo_number_2.jpg"
+        },
+        // ...
+      ]
+    },
+    {
+      "review_id": 3,
+      "rating": 4,
+      "summary": "I am liking these glasses",
+      "recommend": false,
+      "response": "Glad you're enjoying the product!",
+      "body": "They are very dark. But that's good because I'm in very sunny spots",
+      "date": "2019-06-23T00:00:00.000Z",
+      "reviewer_name": "bigbrotherbenjamin",
+      "helpfulness": 5,
+      "photos": [],
+    },
+    // ...
+  ]
+}
+```
