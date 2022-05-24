@@ -52,7 +52,7 @@ const RelatedCarousel = (props) => {
       await setStylesAndProducts(response)
     })
     .catch((error) => {
-      console.log(error)
+      throw error
     })
   }
 
@@ -79,7 +79,7 @@ const RelatedCarousel = (props) => {
     })
   }
   const showHide = () => {
-    console.log(lengthValue, 'some datas', sliderValue)
+
     if (sliderValue === 1) {
       setModalButton(['none', 'block'])
     } else if (sliderValue === lengthValue - 2) {

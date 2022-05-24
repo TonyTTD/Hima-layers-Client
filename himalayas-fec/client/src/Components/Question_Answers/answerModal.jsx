@@ -72,7 +72,6 @@ var AnswerModal = () => {
     });
 
     if (usephotoUpload.length > 3) {
-      console.log("disabling");
       setToggleUpload(true);
     }
   };

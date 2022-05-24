@@ -13,13 +13,13 @@ import {
 const ProductInformation = (props) => {
 
   let prod = props.currentProduct;
-  // console.log('prod', prod)
+
 
 
   console.log(props.styles);
   if (props.styles) {
     let styles = props.styles;
-    // console.log('styles', styles)
+
     let defaultStyle = styles.results[0];
 
 
@@ -34,7 +34,7 @@ const ProductInformation = (props) => {
     findDefault();
 
     const [currentStyle, selectStyle] = useState(defaultStyle);
-    // console.log('currentStyle', currentStyle);
+
     var price;
 
     const priceCheck = (product) => {
@@ -61,7 +61,7 @@ const ProductInformation = (props) => {
       }
     }
 
-  // console.log('cs', [currentStyle]);
+
 
   return (
 

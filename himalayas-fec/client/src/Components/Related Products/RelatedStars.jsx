@@ -44,7 +44,6 @@ const RelatedStars = (props) => {
           stars.push(1.0);
           break;
         default:
-          console.log("OOPS");
           stars.push(0);
           break;
       }

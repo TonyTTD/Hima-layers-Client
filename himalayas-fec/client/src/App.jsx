@@ -46,7 +46,6 @@ var App = (props) => {
 
   useEffect(() => {
     const bodyEl = document.querySelector("body");
-    console.log("themeMode");
     themeMode ? bodyEl.classList.add("dark") : bodyEl.classList.remove("dark");
   }, [themeMode]);
 

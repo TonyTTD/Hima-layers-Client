@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import StyleDisplay from './StyleDisplay.jsx';
 
 const StyleGallery = (props) => {
 
@@ -18,15 +17,11 @@ const StyleGallery = (props) => {
       const photos = props.style.photos;
 
       return (
-        // <div className="gallery">
           <div id = "test">
           <div className="display">
-            {/* <div className="space"></div> */}
             <img className="main-gal" src={imageSelection} height="600" width="800"></img>
-              {/* <StyleDisplay image={imageSelection} /> */}
           </div>
           <div className="galleryThumbs">
-            {/* <h2>Fashion Gallery</h2> */}
             {photos.map((photo, index) => {
               return(
                 <span className="gallery-cell"
@@ -56,7 +51,6 @@ const StyleGallery = (props) => {
             </div>
           )
         })}
-        {/* <StyleDisplay image={this.state.image} /> */}
         <img src="https://i.redd.it/xke2yxfzofu71.jpg" alt="Hang In There!" width="300" height="300"></img>
       </div>
     )
