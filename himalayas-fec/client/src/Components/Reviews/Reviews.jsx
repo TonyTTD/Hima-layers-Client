@@ -10,19 +10,37 @@ import {
   productReviewsSelector,
   productMetaReviewsSelector,
   sortParam,
+  ratingSelector,
+  filterReview,
 } from "../../lib/Atoms.jsx";
 import Ratings from "./Ratings.jsx";
 
 var Reviews = () => {
+  // -------------for single review--------------
+  const specifiedReviewID = useRecoilValue(productReviewsSelector);
+
   //----------------------for ratings-----------------
   const specifiedRatings = useRecoilValue(productMetaReviewsSelector);
 
-  const recommended = Number(specifiedRatings.recommended.true || 0);
+  // const recommended = Number(specifiedRatings.recommended.true || 0);
 
-  const notRecommended = Number(specifiedRatings.recommended.false || 0);
-  const sum = recommended + notRecommended;
+  // const notRecommended = Number(specifiedRatings.recommended.false || 0);
+  // const sum = recommended + notRecommended;
 
   // total rating part
+  // ---------------------for filter rating------------------
+  const rating = useRecoilValue(ratingSelector);
+  const filter = useRecoilValue(filterReview);
+
+  const filterReviews = (rating) => {
+    return specifiedReviewID.filter((review) => {
+      return Number(review.rating) === Number(rating);
+    });
+  };
+
+  const recommended = Number(specifiedRatings.recommended.true || 0);
+  const notRecommended = Number(specifiedRatings.recommended.false || 0);
+  const sum = recommended + notRecommended;
   const convertRatings = Object.values(specifiedRatings.ratings).map(
     (rating) => {
       return Number(rating);
@@ -54,7 +72,9 @@ var Reviews = () => {
       </div>
       <div className="grid-child reviews">
         <div className="sort-review">
-          <label htmlFor="sort-review"> sorted by </label>
+          <label htmlFor="sort-review">
+            {specifiedReviewID.length} reviews, sorted by{" "}
+          </label>
           <select name="sort-review" id="sort-review" onChange={handleDropdown}>
             <option value="helpful">Helpful</option>
             <option value="newest">Newest</option>
@@ -63,7 +83,7 @@ var Reviews = () => {
         </div>
         <SingleReview
           characteristics={Object.keys(specifiedRatings.characteristics)}
-          specifiedReviewID={specifiedReviewID}
+          specifiedReviewID={filter ? filterReviews(rating) : specifiedReviewID}
           product_id={specifiedRatings.product_id}
         />
       </div>

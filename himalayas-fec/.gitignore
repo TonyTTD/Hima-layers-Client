@@ -32,3 +32,5 @@ client/src/config/config.js
 /package.json
 client\dist\bundle.js.LICENSE.txt
 
+
+/himalayerskey.pem

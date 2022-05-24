@@ -43,8 +43,12 @@ const Overview = (props) => {
       <StyleSelector styles={stylesArray} />
       <ProductInformation
         currentProduct={currentProduct}
+<<<<<<< HEAD
         styles={stylesArray}
       />
+=======
+        styles={stylesArray}/>
+>>>>>>> master
     </div>
   );
 };

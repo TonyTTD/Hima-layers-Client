@@ -5,6 +5,7 @@
   overflow: auto;
   max-height: 100%;
   width: 500px;
+
   max-width: 100%;
   position: absolute;
   left: 25%;
@@ -43,7 +44,8 @@
   font-size: 20px;
   font-weight: bolder;
   width: 150px;
-  top: 70px;
+  top: 73px;
+  left: -15px;
   text-align: center;
   color: white;
   background-color: black;
@@ -67,20 +69,21 @@
   width: 100px;
   left: 20%;
   top: 25%;
-  // z-index: 20;
 }
 .relatedCardContainer {
   position: relative;
   height: 325px;
   width: 200px;
-  margin: 10;
+  border: 3px solid black;
+  top: -1.5%;
+  left: -2%;
 }
 
 .outfitMainOuter {
-  width: 100%;
+  width: 60%;
   height: 340px;
-  margin: 5px;
   overflow: hidden;
+  border: 3px solid black;
 }
 
 .outfitMainInner {
@@ -121,7 +124,7 @@
   border-radius: 50%;
   height: 50px;
   width: 50px;
-  z-index: 20;
+  z-index: 10;
   margin: 5px;
 }
 
@@ -135,6 +138,7 @@
   top: 36%;
   height: 200px;
   width: 200px;
+  border: 3px solid orange;
   border-radius: 50%;
   background: rgb(247,105,3);
   background: linear-gradient(211deg, rgba(247,105,3,1) 0%, rgba(249,155,39,1) 23%, rgba(245,246,9,0.8603816526610644) 75%);
@@ -151,15 +155,15 @@
   display: flex;
   width: 100%;
   position: relative;
-  // overflow: auto;
 }
 
 .carousel-content-wrapper {
   overflow: hidden;
+  border: 3px solid black;
   float: left;
   display: flex;
   flex-direction: row;
-  width: 80%;
+  width: 60%;
   height: 100%;
 }
 
@@ -187,8 +191,8 @@
 .relatedCarouselHeader {
   font-family: monospace;
   position: absolute;
-  top: 55px;
-  left: -10px;
+  top: 68px;
+  left: -19px;
   background-color: black;
   color: white;
   transform: rotate(-45deg);
@@ -233,7 +237,6 @@
 
 .relatedModalOuter1 {
   position: fixed;
-  top: 0;
   right: 20%;
   z-index: 70;
   border-bottom: 750px solid lightgray;
@@ -241,7 +244,6 @@
 
 .relatedModalOuter2 {
   position: fixed;
-  top: 0;
   right: 40%;
   z-index: 80;
   border-bottom: 750px solid gray;
@@ -249,7 +251,6 @@
 
 .relatedModalOuter3 {
   position: fixed;
-  top: 0;
   right: 60%;
   z-index: 90;
   border-bottom: 750px solid darkgray;
@@ -258,18 +259,18 @@
 .relatedModalOuter1, .relatedModalOuter2, .relatedModalOuter3 {
   width: 0;
   height: 0;
+  bottom: 0%;
   border-top: 250px solid transparent;
   border-left: 250px solid transparent;
   border-right: 250px solid transparent;
 }
-// opacity: 100, overflow: 'auto', position: 'absolute', left: '50%',
-//       top: '50%', height: 300, width: 400, backgroundColor: 'gray',
+
 .relatedModalInner {
   overflow: auto;
   -ms-overflow-style: none;
   position: fixed;
-  left: 44%;
-  top: 87%;
+  left: 50%;
+  top: 90%;
   background-color: transparent;
   height: 200px;
   width: 500px;
@@ -293,4 +294,20 @@
 @keyframes testing {
   from {height: 225; width: 200}
   to {height: 450; width: 400}
+}
+
+#leftArrow {
+  position: absolute;
+}
+
+.blueSky {
+  height: 300vh;
+  width: 300vh;
+  position: fixed;
+  top: 20%;
+  left: -55%;
+  border-radius: 50%;
+  z-index: 10;
+  background: rgb(8,64,241);
+  background: radial-gradient(circle, rgba(8,64,241,1) 0%, rgba(10,153,238,1) 23%, rgba(132,139,217,0.9500175070028011) 75%);
 }

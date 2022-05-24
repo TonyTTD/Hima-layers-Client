@@ -129,6 +129,14 @@ var putReviewReport = (review_id) => {
   let parameterURL = `${serverUrl}/reviews/${review_id}/report`;
   return axiosPut(parameterURL);
 };
+
+// ----------------post reviews-----------------
+var postReview = (body) => {
+  let parameterURL = `${serverUrl}/reviews`;
+
+  return axiosPost(parameterURL, body);
+};
+
 //--------------- API Products By ID ----------------
 var productsByID = (product_id) => {
   let parameterURL = `${serverUrl}/products/${product_id}`;
@@ -157,7 +165,7 @@ var applicationClick = (body) => {
   let parameterURL = `${serverUrl}/interactions`;
 
   return axiosPost(parameterURL, body);
-}
+};
 //Will need to add CART API get later on...
 
 export {
@@ -167,6 +175,7 @@ export {
   metaReviews,
   putReviewHelpful,
   putReviewReport,
+  postReview,
   relatedProducts,
   productStyles,
   selectedProduct,
