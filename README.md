@@ -322,3 +322,116 @@ GET /reviews/
   ]
 }
 ```
+
+### Review Metadata
+```httpg
+GET /reviews/meta
+```
+
+<table>
+  <tbody>
+    <tr>
+      <td>Parameter</td>
+      <td>Type</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>product_id</td>
+      <td>int</td>
+      <td>Requires ID of product requested</td>
+    </tr>
+  </tbody>
+</table>
+  
++ Response 200 (application/json)
+```json
+{
+  "product_id": "2",
+  "ratings": {
+    2: 1,
+    3: 1,
+    4: 2,
+    // ...
+  },
+  "recommended": {
+    0: 5
+    // ...
+  },
+  "characteristics": {
+    "Size": {
+      "id": 14,
+      "value": "4.0000"
+    },
+    "Width": {
+      "id": 15,
+      "value": "3.5000"
+    },
+    "Comfort": {
+      "id": 16,
+      "value": "4.0000"
+    },
+    // ...
+}
+``` 
+    
+### Add a Review
+```httpg
+POST /reviews
+```
+
+<table>
+  <tbody>
+    <tr>
+      <td>Parameter</td>
+      <td>Type</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>product_id</td>
+      <td>int</td>
+      <td>Requires ID of product requested</td>
+    </tr>
+    <tr>
+      <td>rating</td>
+      <td>int</td>
+      <td>Integer (1-5) indicating the review rating</td>
+    </tr>
+    <tr>
+      <td>summary</td>
+      <td>text</td>
+      <td>Summary text of the review</td>
+    </tr>
+    <tr>
+      <td>body</td>
+      <td>text</td>
+      <td>Continued text of the review</td>
+    </tr>
+    <tr>
+      <td>recommend</td>
+      <td>bool</td>
+      <td>Value indicating if the reviewer recommends the product</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>text</td>
+      <td>Username for question asker</td>
+    </tr>
+    <tr>
+      <td>email</td>
+      <td>text</td>
+      <td>Email address for question asker</td>
+    </tr>
+    <tr>
+      <td>photos</td>
+      <td>[text]</td>
+      <td>Array of text urls that link to images to be shown</td>
+    </tr>
+    <tr>
+      <td>characteristics</td>
+      <td>object</td>
+      <td>Object of keys representing characteristic_id and values representing the review value for that characteristic. { "14": 5, "15": 5 //...}</td>
+    </tr>
+  </tbody>
+</table>
+  
++ Response 201 Created (application/json)
