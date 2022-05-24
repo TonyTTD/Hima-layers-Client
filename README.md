@@ -775,3 +775,25 @@ PUT /qa/answers/:answer_id/helpful
 </table>
   
 + Response 204  No Content
+
+### Report Answer
+```httpg
+PUT /qa/answers/:answer_id/report
+```
+
+<table>
+  <tbody>
+    <tr>
+      <td>Parameter</td>
+      <td>Type</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>answer_id</td>
+      <td>int</td>
+      <td>Required ID of the answer to update</td>
+    </tr>
+  </tbody>
+</table>
+  
++ Response 204  No Content
