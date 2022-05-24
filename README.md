@@ -75,6 +75,7 @@ GET /products/
     },
     // ...
 ]
+```
 
 ### Product Information
 ```httpg
@@ -118,3 +119,128 @@ GET /products/:product_id
   	// ...
     ],
 }
+```
+    
+### Product Styles
+```httpg
+GET /products/:product_id/styles
+```
+
+<table>
+  <tbody>
+    <tr>
+      <td>Parameter</td>
+      <td>Type</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>product_id</td>
+      <td>int</td>
+      <td>Requires ID of product requested</td>
+    </tr>
+  </tbody>
+</table>
+  
++ Response 200 (application/json)
+```json
+   
+ {
+    "product_id": "1",
+    "results": [
+  	{
+            "style_id": 1,
+            "name": "Forest Green & Black",
+            "original_price": "140",
+            "sale_price": "0",
+            "default?": true,
+            "photos": [
+  			{
+                    "thumbnail_url": "urlplaceholder/style_1_photo_number_thumbnail.jpg",
+                    "url": "urlplaceholder/style_1_photo_number.jpg"
+                },
+  			{
+                    "thumbnail_url": "urlplaceholder/style_1_photo_number_thumbnail.jpg",
+                    "url": "urlplaceholder/style_1_photo_number.jpg"
+                }
+  			// ...
+            ],
+        "skus": {
+                	"37": {
+                    		"quantity": 8,
+                    		"size": "XS"
+                	},
+                	"38": {
+                    		"quantity": 16,
+                    		"size": "S"
+                	},
+                	"39": {
+                    		"quantity": 17,
+                    		"size": "M"
+                	},
+            //...
+            	}
+    },
+  {
+        "style_id": 2,
+        "name": "Desert Brown & Tan",
+        "original_price": "140",
+        "sale_price": "0",
+        "default?": false,
+        "photos": [
+  			{
+                    "thumbnail_url": "urlplaceholder/style_2_photo_number_thumbnail.jpg",
+                    "url": "urlplaceholder/style_2_photo_number.jpg"
+        }
+      // ...
+            ],
+        "skus": {
+                	"37": {
+                    		"quantity": 8,
+                    		"size": "XS"
+                	},
+                	"38": {
+                    		"quantity": 16,
+                    		"size": "S"
+                	},
+                	"39": {
+                    		"quantity": 17,
+                    		"size": "M"
+                	},
+            //...
+            	}
+    },
+  // ...
+}
+```
+
+### Related Products
+```httpg
+GET /products/:product_id/related
+```
+
+<table>
+  <tbody>
+    <tr>
+      <td>Parameter</td>
+      <td>Type</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>product_id</td>
+      <td>int</td>
+      <td>Requires ID of product requested</td>
+    </tr>
+  </tbody>
+</table>
+  
++ Response 200 (application/json)
+```json
+   
+[
+  2,
+  3,
+  8,
+  7
+],
+```
+    
