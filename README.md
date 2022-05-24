@@ -797,3 +797,35 @@ PUT /qa/answers/:answer_id/report
 </table>
   
 + Response 204  No Content
+    
+### Log an Interaction
+```httpg
+POST /interactions
+```
+
+<table>
+  <tbody>
+    <tr>
+      <td>Parameter</td>
+      <td>Type</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>element</td>
+      <td>string</td>
+      <td>Required. Selector for the element which was clicked</td>
+    </tr>
+    <tr>
+      <td>widget</td>
+      <td>string</td>
+      <td>Required. Name of the module/widget in which the click occured</td>
+    </tr>
+    <tr>
+      <td>time</td>
+      <td>string</td>
+      <td>Required. Time the interaction occurred</td>
+    </tr>
+  </tbody>
+</table>
+  
++ Response 201 Created
