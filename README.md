@@ -17,8 +17,10 @@
 ```httpg
 /app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/
 ```
-
-  
+```httpg
+Authorization: <GitHub Token>
+```
+    
 ### List Products
 ```httpg
 GET /products/
@@ -74,3 +76,45 @@ GET /products/
     // ...
 ]
 
+### Product Information
+```httpg
+GET /products/:product_id
+```
+
+<table>
+  <tbody>
+    <tr>
+      <td>Parameter</td>
+      <td>Type</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>product_id</td>
+      <td>int</td>
+      <td>Requires ID of product requested</td>
+    </tr>
+  </tbody>
+</table>
+  
++ Response 200 (application/json)
+```json
+   
+ {
+    "id": 11,
+    "name": "Air Minis 250",
+    "slogan": "Full court support",
+    "description": "This optimized air cushion pocket reduces impact but keeps a perfect balance underfoot.",
+    "category": "Basketball Shoes",
+    "default_price": "0",
+    "features": [
+  	{
+            "feature": "Sole",
+            "value": "Rubber"
+        },
+  	{
+            "feature": "Material",
+            "value": "FullControlSkin"
+        },
+  	// ...
+    ],
+}
